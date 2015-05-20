@@ -39,8 +39,8 @@ public class DefaultUdtChannelConfig extends DefaultChannelConfig implements
     private static final int K = 1024;
     private static final int M = K * K;
 
-    private volatile int protocolReceiveBuferSize = 10 * M;
-    private volatile int protocolSendBuferSize = 10 * M;
+    private volatile int protocolReceiveBuferSize = 100 * M;
+    private volatile int protocolSendBuferSize = 100 * M;
 
     private volatile int systemReceiveBufferSize = M;
     private volatile int systemSendBuferSize = M;
