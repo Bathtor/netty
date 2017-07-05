@@ -980,6 +980,11 @@
         <artifactId>os-maven-plugin</artifactId>
         <version>1.4.1.Final</version>
       </extension>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ssh-external</artifactId>
+        <version>1.0-beta-6</version>
+      </extension>
     </extensions>
 
     <plugins>
@@ -1278,7 +1283,7 @@
         <version>2.4.2</version>
         <configuration>
           <useReleaseProfile>false</useReleaseProfile>
-          <arguments>-P restricted-release,full</arguments>
+          <releaseProfiles>release</releaseProfiles>
           <autoVersionSubmodules>true</autoVersionSubmodules>
           <allowTimestampedSnapshots>false</allowTimestampedSnapshots>
           <tagNameFormat>netty-@{project.version}</tagNameFormat>
@@ -1603,6 +1608,24 @@
       </plugins>
     </pluginManagement>
   </build>
+
+<distributionManagement>
+    <repository>
+      <id>sics-release-repository</id>
+      <name>SICS Repository</name>
+      <url>scpexe://kompics.i.sics.se/home/maven/repository</url>
+    </repository>
+    <snapshotRepository>
+      <id>sics-snapshot-repository</id>
+      <name>SICS Snapshot Repository</name>
+      <url>scpexe://kompics.i.sics.se/home/maven/snapshotrepository</url>
+    </snapshotRepository>
+    <site>
+      <id>kompics-site</id>
+      <url>scpexe://kompics.i.sics.se/var/www/kompics/report/trunk</url>
+    </site>
+    <downloadUrl>http://kompics.i.sics.se/maven/repository</downloadUrl>
+  </distributionManagement>
 
   <repositories>
         <repository>
