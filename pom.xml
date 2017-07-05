@@ -17,11 +17,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <parent>
+  <!-- <parent>
     <groupId>org.sonatype.oss</groupId>
     <artifactId>oss-parent</artifactId>
     <version>9</version>
-  </parent>
+  </parent>//-->
 
   <groupId>io.netty</groupId>
   <artifactId>netty-parent</artifactId>
@@ -50,9 +50,9 @@
   <inceptionYear>2008</inceptionYear>
 
   <scm>
-    <url>https://github.com/netty/netty</url>
-    <connection>scm:git:git://github.com/netty/netty.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/netty/netty.git</developerConnection>
+    <url>https://github.com/Bathtor/netty</url>
+    <connection>scm:git:git://github.com/Bathtor/netty.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/Bathtor/netty.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
@@ -1278,7 +1278,7 @@
         <version>2.4.2</version>
         <configuration>
           <useReleaseProfile>false</useReleaseProfile>
-          <arguments>-P restricted-release,sonatype-oss-release,full</arguments>
+          <arguments>-P restricted-release,full</arguments>
           <autoVersionSubmodules>true</autoVersionSubmodules>
           <allowTimestampedSnapshots>false</allowTimestampedSnapshots>
           <tagNameFormat>netty-@{project.version}</tagNameFormat>
@@ -1603,4 +1603,28 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <repositories>
+        <repository>
+            <id>sics-release</id>
+            <name>SICS Release Repository</name>
+            <url>http://kompics.sics.se/maven/repository</url>
+            <releases>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>sics-snapshot</id>
+            <name>SICS Snapshot Repository</name>
+            <url>http://kompics.sics.se/maven/snapshotrepository</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+            </snapshots>
+        </repository>
+  </repositories>
+
 </project>
